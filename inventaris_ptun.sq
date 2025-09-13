@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS inventaris_ptun;
+USE inventaris_ptun;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('Administrator', 'User', 'Operator') DEFAULT 'User',
+    status ENUM('Aktif', 'Tidak Aktif') DEFAULT 'Aktif',
+    last_login DATETIME NULL
+);
+
+INSERT INTO users (username, email, password, role) 
+VALUES ('admin', 'admin@ptun-banjarmasin.go.id', MD5('admin'), 'Administrator');

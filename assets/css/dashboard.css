@@ -1,0 +1,37 @@
+/* Sidebar styling */
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -220px;
+  transition: margin 0.25s ease-out;
+  width: 220px;
+}
+#sidebar-wrapper .list-group-item {
+  border: none;
+  padding: .75rem 1.25rem;
+}
+#sidebar-wrapper .list-group-item.active {
+  background-color: rgba(255,255,255,.2) !important;
+}
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+body.sb-sidenav-toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+  body.sb-sidenav-toggled #sidebar-wrapper {
+    margin-left: -220px;
+  }
+}
+/* Gradient biru elegan */
+.bg-gradient-primary {
+    background: linear-gradient(180deg, #0056b3 0%, #003d80 100%);
+}
+/* Hover item */
+.list-group-item.bg-transparent:hover {
+    background-color: rgba(255,255,255,.1) !important;
+}
